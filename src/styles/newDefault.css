@@ -7,7 +7,7 @@
     text-align: left;
     font-family: 'Rubik Variable', sans-serif;
     font-weight: 900;
-    line-height: 1;
+    line-height: 0;
     margin-top: -5px;
     margin: 0;
     width:fit-content;
@@ -65,8 +65,4 @@ div.items {
 a {
     text-decoration: none;
     color: black;
-}
-
-.spaceBeneath {
-    line-height: 5rem;
 }
