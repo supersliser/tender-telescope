@@ -36,15 +36,16 @@ if (float == "left") {
         font-weight: 400;
         font-size: 2rem;
         text-decoration: none;
+        color: black;
     }
 </style>
 
 <a class="itemContainer p" href={link}
     ><div class="itemContainer">
-        <AnimBlock class="AnimBlock" startLocation="left">
+        <AnimBlock class="AnimBlock" startLocation="bottom">
             <p class="hover-underline-animation p">{title}</p>
         </AnimBlock>
-        <AnimBlock class="AnimBlock" startlocation="left">
+        <AnimBlock class="AnimBlock" startlocation="right">
             <img src={image} alt={"an image displaying " + title} />
         </AnimBlock>
     </div></a
