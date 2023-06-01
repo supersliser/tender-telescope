@@ -1,0 +1,49 @@
+nav {
+    position: fixed;
+    top: 5%;
+    z-index: 2;
+    width: 10vw;
+    height: 40vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navItem {
+    border-radius: 10px;
+    border-color: #00eeff;
+border-style: solid;
+    width: 120%;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+    margin-left: -110%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@keyframes NavSelected {
+    from {
+        margin-left: -110%;
+    }
+
+    to {
+        margin-left: -30%;
+    }
+}
+
+.navItem:hover {
+    animation: NavSelected 0.5s ease-in-out;
+    margin-left: -30%;
+}
+
+.navItem a {
+    margin-left: 40%;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}

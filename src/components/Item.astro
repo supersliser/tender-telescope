@@ -1,0 +1,49 @@
+---
+const { image, title, float, link } = Astro.props;
+import AnimBlock from "../components/AnimationBlock.astro";
+
+var ml = "";
+var mr = "";
+if (float == "left") {
+    ml = "0%";
+    mr = "20%";
+} else if (float == "right") {
+    ml = "20%";
+    mr = "0%";
+} else if (float == "center") {
+    ml = "10%";
+    mr = "10%";
+}
+---
+
+<style define:vars={{ ml, mr }}>
+    @import "@fontsource-variable/baloo-bhaina-2";
+    div {
+        width: 80%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        margin-left: var(--ml);
+        margin-right: var(--mr);
+    }
+    .AnimBlock {
+        width: 35%;
+    }
+    img {
+        width: 100%;
+        height: fit-content;
+    }
+    p {
+        font-family: "Baloo Bhaina 2 Variable", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+</style>
+
+<a href={link}
+    ><div>
+        <AnimBlock class="AnimBlock" startLocation="left"><p>{title}</p></AnimBlock>
+        <AnimBlock class="AnimBlock" startlocation="left">
+            <img src={image} alt={"an image displaying " + title} />
+        </AnimBlock>
+    </div></a
+>

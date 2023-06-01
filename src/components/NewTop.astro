@@ -1,0 +1,22 @@
+---
+import video from "../images/PortfolioVideo.mp4"
+---
+<style>
+    .topContainer {
+        background-color: #090909;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="topContainer">
+    <video width="100%" autoplay muted loop>
+        <source
+            src={video}
+            type="video/mp4"
+        />
+        video not available
+    </video>
+</div>

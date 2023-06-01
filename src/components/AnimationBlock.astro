@@ -1,0 +1,71 @@
+---
+const { backColour, startLocation } = Astro.props;
+import Test from "../scripts/test.js";
+var PaddingV = "0px"
+var PaddingH = "0px"
+if (startLocation == "bottom") {
+    PaddingV = "20px";
+}
+else if (startLocation == "left") {
+    PaddingH = "-20px";
+}
+else if (startLocation == "right") {
+    PaddingH = "20px";
+}
+else if (startLocation == "top") { 
+    PaddingV = "-20px";
+}
+else {
+    PaddingV = "20px";
+}
+---
+
+<style define:vars={{ backColour, PaddingH, PaddingV }}>
+    div.container {
+        width: 100%;
+        height: fit-content;
+        background-color: var(--backColour);
+        display: block;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    .anim {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: start;
+        gap: 20px;
+    }
+    .itemContainer {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            padding-top: var(--PaddingV);
+            padding-left: var(--PaddingH)
+        }
+        to {
+            opacity: 1;
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+    }
+    .fade-in {
+        animation: fadeIn 1s ease-in-out;
+    }
+    .itemContainer {
+        height: max-content;
+        width: max-content;
+    }
+</style>
+
+<div class="container">
+    <Test client:only />
+    <div class="itemContainer">
+        <div class="anim"><slot /></div>
+    </div>
+</div>

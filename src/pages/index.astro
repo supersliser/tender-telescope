@@ -1,15 +1,44 @@
 ---
+import BasicLayout from "../layouts/NewBasicLayout.astro";
+import AnimBlock from "../components/AnimationBlock.astro";
+import Item from "../components/Item.astro";
+const title = "Home";
+import "../styles/newDefault.css";
+import "../styles/HoverUnderline.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BasicLayout title={title}>
+    <div class="basicFill">
+        <AnimBlock backColour="#ffffff">
+            <p class="titleText">
+                I am a <span class="hover-underline-animation">3D modeller</span
+                >
+            </p>
+        </AnimBlock>
+        <AnimBlock backColour="#ffffff">
+            <p class="titleText">
+                I am a <span class="hover-underline-animation">programmer</span>
+            </p>
+        </AnimBlock>
+        <AnimBlock backColour="#ffffff">
+            <p class="titleText">
+                I am a <span class="hover-underline-animation">voice actor</span
+                >
+            </p>
+        </AnimBlock>
+        <AnimBlock backColour="#ffffff">
+            <h1 class="titleText">I am</h1>
+            <h1 class="titleText hover">Thomas Lower</h1>
+        </AnimBlock>
+    </div>
+    <div class="basicFill">
+        <div class="items">
+            <AnimBlock startLocation="right" class="smallerText"><h1 class="smallerText hover-underline-animation">Some of the stuff I've made</h1></AnimBlock>
+            <Item
+                image="https://media.discordapp.net/attachments/903265431396179978/977713497595084901/Maebee_TVAsks.png"
+                title="MaebeeTV Asks"
+                float="right"
+            />
+        </div>
+    </div>
+</BasicLayout>
