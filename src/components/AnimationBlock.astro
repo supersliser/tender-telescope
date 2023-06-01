@@ -37,11 +37,6 @@ else {
         justify-content: start;
         gap: 20px;
     }
-    .itemContainer {
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-    }
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -65,7 +60,5 @@ else {
 
 <div class="container">
     <Test client:only />
-    <div class="itemContainer">
         <div class="anim"><slot /></div>
-    </div>
 </div>
