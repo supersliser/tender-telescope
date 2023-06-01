@@ -10,6 +10,7 @@ const renders = await Astro.glob("../pages/projects/renders/*.mdx");
 
 var filteredPages = [];
 var randoms = [];
+var mbs = [];
 for (var i = 0; i < renders.length; i++) {
     if (renders[i].frontmatter.featured) {
         filteredPages.push(renders[i]);
@@ -21,6 +22,7 @@ for (var i = 0; i < renders.length; i++) {
         } else if (temp == 2) {
             randoms.push("center");
         }
+        mbs.push(Math.floor(Math.random() * 20))
     }
 }
 ---
@@ -70,6 +72,7 @@ for (var i = 0; i < renders.length; i++) {
                             randoms[Math.floor(Math.random() * randoms.length)]
                         }
                         link={page.url}
+                        mb={mbs[Math.floor(Math.random() * randoms.length)]}
                     />
                 ))
             }

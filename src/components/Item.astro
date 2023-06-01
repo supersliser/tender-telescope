@@ -1,5 +1,5 @@
 ---
-const { image, title, float, link } = Astro.props;
+const { image, title, float, link, mb } = Astro.props;
 import AnimBlock from "../components/AnimationBlock.astro";
 import "../styles/HoverUnderline.css"
 var ml = "10%";
@@ -16,12 +16,11 @@ if (float == "left") {
 }
 ---
 
-<style define:vars={{ ml, mr }}>
+<style define:vars={{ ml, mr, mb }}>
     @import "@fontsource-variable/baloo-bhaina-2";
     .itemContainer {
         width: 60%;
-        margin-top: 5%;
-        margin-bottom: 5%;
+        margin-bottom: var(-mb)%;
         margin-left: var(--ml);
         margin-right: var(--mr);
         display:flex;
