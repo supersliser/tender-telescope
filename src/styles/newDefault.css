@@ -45,6 +45,7 @@
 }
 
 div.basicFill {
+    margin-top: 5%;
     background-color: white;
     width: 100%;
     padding-left: 5%;
@@ -61,4 +62,13 @@ div.items {
     flex-direction: column;
     justify-content:space-around;
     width: 80%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.spaceBeneath {
+    line-height: 5rem;
 }

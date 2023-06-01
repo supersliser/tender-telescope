@@ -1,0 +1,44 @@
+---
+const { frontmatter } = Astro.props;
+import Nav from "../components/NavBar.astro";
+import logo from "../images/logo.jpg";
+import "../styles/Projects.css";
+const backPri = frontmatter.colour.backPri;
+const backSec = frontmatter.colour.backSec;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href={logo} />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title} - Thomas Lower</title>
+    </head>
+    <body>
+        <Nav />
+        <div class="backColour">
+            <div>
+                <h1 class="titleText">{frontmatter.title}</h1>
+                <img class="test"
+                    src={frontmatter.image}
+                    alt="primary image of the render"
+                />
+            </div>
+            <div class="containerV">
+                <slot />
+            </div>
+        </div>
+    </body>
+    <style define:vars={{ backPri, backSec }}>
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+        }
+        .backColour {
+            background-image: linear-gradient(var(--backPri), var(--backSec));
+        }
+    </style>
+</html>

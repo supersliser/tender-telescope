@@ -10,10 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.5",
     "@astrojs/react": "^2.2.1",
     "@astrojs/vercel": "^3.4.1",
     "@fontsource-variable/baloo-bhaina-2": "^5.0.2",
+    "@fontsource-variable/outfit": "^5.0.2",
     "@fontsource-variable/rubik": "^5.0.3",
+    "@fontsource/comic-neue": "^5.0.2",
+    "@fontsource/share-tech-mono": "^5.0.2",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "astro": "^2.5.6",

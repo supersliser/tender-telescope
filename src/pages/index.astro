@@ -5,13 +5,35 @@ import Item from "../components/Item.astro";
 const title = "Home";
 import "../styles/newDefault.css";
 import "../styles/HoverUnderline.css";
+
+const renders = await Astro.glob("../pages/projects/renders/*.mdx");
+
+var filteredPages = [];
+var randoms = [];
+for (var i = 0; i < renders.length; i++) {
+    if (renders[i].frontmatter.featured) {
+        filteredPages.push(renders[i]);
+        const temp = Math.floor(Math.random() * 2)
+        if (temp == 0) {
+            randoms.push("left");
+        }
+        else if (temp == 1) {
+            randoms.push("right");
+        }
+        else if (temp == 2) {
+            randoms.push("center");
+        }
+    }
+}
 ---
 
 <BasicLayout title={title}>
     <div class="basicFill">
         <AnimBlock backColour="#ffffff">
             <p class="titleText">
-                I am a <span class="hover-underline-animation">3D modeller</span
+                I am a <a href="/projects/renders/"
+                    ><span class="hover-underline-animation">3D modeller</span
+                    ></a
                 >
             </p>
         </AnimBlock>
@@ -33,12 +55,22 @@ import "../styles/HoverUnderline.css";
     </div>
     <div class="basicFill">
         <div class="items">
-            <AnimBlock startLocation="right" class="smallerText"><h1 class="smallerText hover-underline-animation">Some of the stuff I've made</h1></AnimBlock>
-            <Item
-                image="https://media.discordapp.net/attachments/903265431396179978/977713497595084901/Maebee_TVAsks.png"
-                title="MaebeeTV Asks"
-                float="right"
-            />
+            <AnimBlock startLocation="right" class="smallerText">
+                <h1 class="smallerText">
+                    Som<span class="hover-underline-animation spaceBeneath"
+                        >e of the stuff I've made</span>
+                </h1>
+            </AnimBlock>
+            {
+                filteredPages.map((page) => 
+                    <Item
+                        image={page.frontmatter.image}
+                        title={page.frontmatter.title}
+                        float={randoms[Math.floor(Math.random() * randoms.length)]}
+                        link={page.url}
+                    />
+                )
+            }
         </div>
     </div>
 </BasicLayout>

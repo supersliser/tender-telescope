@@ -1,15 +1,15 @@
 ---
 const { image, title, float, link } = Astro.props;
 import AnimBlock from "../components/AnimationBlock.astro";
-
-var ml = "";
-var mr = "";
+import "../styles/HoverUnderline.css"
+var ml = "10%";
+var mr = "10%";
 if (float == "left") {
-    ml = "0%";
-    mr = "20%";
+    ml = "5%";
+    mr = "15%";
 } else if (float == "right") {
-    ml = "20%";
-    mr = "0%";
+    ml = "15%";
+    mr = "5%";
 } else if (float == "center") {
     ml = "10%";
     mr = "10%";
@@ -18,30 +18,32 @@ if (float == "left") {
 
 <style define:vars={{ ml, mr }}>
     @import "@fontsource-variable/baloo-bhaina-2";
-    div {
-        width: 80%;
+    .itemContainer {
+        width: 80vw;
         margin-top: 15%;
         margin-bottom: 15%;
         margin-left: var(--ml);
         margin-right: var(--mr);
     }
     .AnimBlock {
-        width: 35%;
+        width: 35vw;
     }
     img {
-        width: 100%;
-        height: fit-content;
+        width: 50%;
     }
-    p {
+    .p {
         font-family: "Baloo Bhaina 2 Variable", sans-serif;
         font-weight: 400;
         font-size: 2rem;
+        text-decoration: none;
     }
 </style>
 
-<a href={link}
-    ><div>
-        <AnimBlock class="AnimBlock" startLocation="left"><p>{title}</p></AnimBlock>
+<a class="itemContainer p" href={link}
+    ><div class="itemContainer">
+        <AnimBlock class="AnimBlock" startLocation="left">
+            <p class="hover-underline-animation p">{title}</p>
+        </AnimBlock>
         <AnimBlock class="AnimBlock" startlocation="left">
             <img src={image} alt={"an image displaying " + title} />
         </AnimBlock>
