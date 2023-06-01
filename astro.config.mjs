@@ -1,15 +1,12 @@
 import { defineConfig } from 'astro/config';
-import vercel from "@astrojs/vercel/hybrid";
+import vercel from "@astrojs/vercel/static";
 import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: "static",
   adapter: vercel(),
   integrations: [react(), mdx()],
-  experimental: {
-    hybridOutput: true,
-  },
 });
