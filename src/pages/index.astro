@@ -13,14 +13,12 @@ var randoms = [];
 for (var i = 0; i < renders.length; i++) {
     if (renders[i].frontmatter.featured) {
         filteredPages.push(renders[i]);
-        const temp = Math.floor(Math.random() * 2)
+        const temp = Math.floor(Math.random() * 2);
         if (temp == 0) {
             randoms.push("left");
-        }
-        else if (temp == 1) {
+        } else if (temp == 1) {
             randoms.push("right");
-        }
-        else if (temp == 2) {
+        } else if (temp == 2) {
             randoms.push("center");
         }
     }
@@ -32,25 +30,31 @@ for (var i = 0; i < renders.length; i++) {
         <AnimBlock backColour="#ffffff">
             <p class="titleText">
                 I am a <a href="/projects/renders/"
-                    ><span class="spaceBeneath hover-underline-animation">3D modeller</span
+                    ><span class="spaceBeneath hover-underline-animation"
+                        >3D modeller</span
                     ></a
                 >
             </p>
         </AnimBlock>
         <AnimBlock backColour="#ffffff">
             <p class="titleText">
-                I am a <span class="spaceBeneath hover-underline-animation">programmer</span>
-            </p>
-        </AnimBlock>
-        <AnimBlock backColour="#ffffff">
-            <p class="titleText">
-                I am a <span class="spaceBeneath hover-underline-animation">voice actor</span
+                I am a <span class="spaceBeneath hover-underline-animation"
+                    >programmer</span
                 >
             </p>
         </AnimBlock>
         <AnimBlock backColour="#ffffff">
-            <p class="titleText">I am</p>
-            <p class="titleText hover">Thomas Lower</p>
+            <p class="titleText">
+                I am a <span class="spaceBeneath hover-underline-animation"
+                    >voice actor</span
+                >
+            </p>
+        </AnimBlock>
+        <AnimBlock backColour="#ffffff">
+            <p class="titleText">
+                I am
+                <span class="hover">Thomas Lower</span>
+            </p>
         </AnimBlock>
     </div>
     <div class="basicFill">
@@ -58,18 +62,21 @@ for (var i = 0; i < renders.length; i++) {
             <AnimBlock startLocation="right" class="smallerText">
                 <h1 class="smallerText">
                     Som<span class="hover-underline-animation spaceBeneath"
-                        >e of the stuff I've made</span>
+                        >e of the stuff I've made</span
+                    >
                 </h1>
             </AnimBlock>
             {
-                filteredPages.map((page) => 
+                filteredPages.map((page) => (
                     <Item
                         image={page.frontmatter.image}
                         title={page.frontmatter.title}
-                        float={randoms[Math.floor(Math.random() * randoms.length)]}
+                        float={
+                            randoms[Math.floor(Math.random() * randoms.length)]
+                        }
                         link={page.url}
                     />
-                )
+                ))
             }
         </div>
     </div>
