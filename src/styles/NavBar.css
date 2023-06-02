@@ -49,7 +49,7 @@ nav {
 }
 
 .navContainer:hover {
-    animation: NavSelected 0.5s ease-in-out;
+    animation: NavSelected 1s ease-in-out;
     margin-right: 0%;
 }
 
