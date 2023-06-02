@@ -54,14 +54,7 @@ nav {
     margin-right: 10%;
 }
 
-.navContainer::after {
-    animation: NavSelected backwards 0.5s ease-in-out;
-    margin-right: 0%;
-}
-
 .navItem a {
-    margin-right: 30%;
-    margin-left: 10%;
     color: black;
     text-decoration: none;
     font-size: 1rem;
@@ -69,7 +62,6 @@ nav {
 }
 
 .label p {
-    rotate: 90;
     font-size: 1rem;
 }
 
