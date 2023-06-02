@@ -5,6 +5,7 @@ import logo from "../images/logo.jpg";
 import "../styles/Projects.css";
 const backPri = frontmatter.colour.backPri;
 const backSec = frontmatter.colour.backSec;
+import Anim from "../components/AnimationBlock.astro"
 ---
 
 <html lang="en">
@@ -19,11 +20,11 @@ const backSec = frontmatter.colour.backSec;
         <Nav />
         <div class="backColour">
             <div>
-                <h1 class="titleText">{frontmatter.title}</h1>
-                <img class="test"
+                <Anim startLocation="bottom"><h1 class="titleText">{frontmatter.title}</h1></Anim>
+                <Anim startLocation="right"><img class="test"
                     src={frontmatter.image}
                     alt="primary image of the render"
-                />
+                /></Anim>
             </div>
             <div class="containerV">
                 <slot />
