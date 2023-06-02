@@ -46,7 +46,7 @@ nav {
 }
 
 .navContainer:hover {
-    animation: NavSelected 0.5s ease-in-out;
+    animation: NavSelected forwards 0.5s ease-in-out;
     margin-left: 0%;
 }
 
