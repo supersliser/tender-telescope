@@ -18,39 +18,20 @@ if (float == "left") {
 ---
 
 <div class="itemContainer">
-    <a class="link" href={link}>
-        <AnimBlock class="container" startLocation="bottom">
-            <p class="hover-underline-animation subtitle">{title}</p>
+    <a class="link container" href={link}>
+        <AnimBlock startLocation="bottom">
+            <p class="hover-underline-animation subtitle" style="margin-bottom: 5%;">{title}</p>
         </AnimBlock>
-        <AnimBlock class="container" startlocation="right">
-            <div>
-                <img src={image} alt={"an image displaying " + title} />
-            </div>
-        </AnimBlock>
+        <img src={image} alt={"an image displaying " + title} />
     </a>
 </div>
 
 <style define:vars={{ ml, mr, mb }}>
     @import "@fontsource-variable/baloo-bhaina-2";
     .itemContainer {
-        width: 30%;
-        height: 30%;
+        width: 60%;
         margin-top: var(--mb);
         margin-left: var(--ml);
         margin-right: var(--mr);
-        background-color: #000000;
-    }
-
-    .container div {
-        height: 100%;
-    }
-
-    .container {
-        padding-bottom: 5%;
-    }
-
-    .itemContainer a {
-        width: 100%;
-        height: 100%;
     }
 </style>

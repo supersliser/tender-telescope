@@ -80,5 +80,7 @@ body .container {
 }
 
 img {
-    height: 100%;
+    max-width: 100%;
+    height: inherit;
+    border-radius: 20px;
 }
