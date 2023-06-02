@@ -59,16 +59,26 @@ nav {
     padding: 0;
     margin: 0;
     margin-left: 10%;
-    width: 90%
+    width: 98%;
+    white-space: break-spaces;
 }
 
 .label {
     position: relative;
     background-color: #3d4aff;
-    border-color: #00eeff;
     border-radius: 8px;
     width: 30%;
-    padding: 0;
+    margin-left: -5%;
+    padding-right: 0;
+    padding-left: 2%;
+}
+
+@media screen and (max-width: 1500px)
+{
+    .label {
+        width: min-content;
+        margin-left: 1.75rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -82,7 +92,7 @@ nav {
 
     .navContainer {
         width: 100%;
-        height: 5%;
+        height: 3rem;
         margin: 0;
         padding: 0;
     }

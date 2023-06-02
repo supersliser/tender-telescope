@@ -16,4 +16,6 @@ export default function afterMount() {
     }
 
     window.addEventListener("scroll", handleScroll);
+    window.scrollBy(0, 1)
+    window.scrollBy(0, 0)
 }
