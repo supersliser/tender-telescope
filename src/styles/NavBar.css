@@ -7,13 +7,12 @@
     width: 10%;
     height: 100%;
     margin: 0;
-    right: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-right: -7%;
+    margin-left: -7%;
 }
 
 nav {
@@ -40,17 +39,17 @@ nav {
 
 @keyframes NavSelected {
     from {
-        margin-right: -7%;
+        margin-left: -7%;
     }
 
     to {
-        margin-right: 0%;
+        margin-left: 0%;
     }
 }
 
 .navContainer:hover {
     animation: NavSelected 0.5s ease-in-out;
-    margin-right: 0%;
+    margin-left: 0%;
 }
 
 .navItem a {
