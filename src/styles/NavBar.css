@@ -18,7 +18,7 @@
 
 nav {
     height: 100%;
-    width: 50%;
+    width: 70%;
 }
 
 .navItem {
@@ -36,22 +36,22 @@ nav {
     justify-content: space-around;
     align-items: center;
     box-shadow: black, 20px;
-    right: -50%;
+    right: -70%;
 }
 
 @keyframes NavSelected {
     from {
-        right: -50%;
+        right: -70%;
     }
 
     to {
-        right: -0%;
+        right: 0%;
     }
 }
 
 .navContainer:hover {
     animation: NavSelected 0.5s ease-in-out;
-    right: -0%;
+    right: 0%;
 }
 
 .navItem a {
@@ -63,6 +63,8 @@ nav {
 
 .label p {
     font-size: 1rem;
+    padding: 0;
+    margin: 0;
 }
 
 .label {
@@ -70,5 +72,5 @@ nav {
     background-color: #3d4aff;
     border-color: #00eeff;
     border-radius: 8px;
-    width: 50%;
+    width: 30%;
 }
