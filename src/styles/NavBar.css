@@ -16,7 +16,7 @@ nav {
 
 .navItem {
     border-radius: 8px;
-    border-color: #00eeff;
+    border-image: radial-gradient(#00d3d3, #7500d4);
     border-style: solid;
     width: 120%;
     height: 10%;
@@ -27,6 +27,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: black, 20px;
 }
 
 @keyframes NavSelected {
