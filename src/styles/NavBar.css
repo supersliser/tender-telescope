@@ -71,6 +71,7 @@ nav {
 }
 
 .label {
+    position:relative;
     right: 0;
     background-color: #3d4aff;
     border-color: #00eeff;
