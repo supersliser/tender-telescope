@@ -5,13 +5,14 @@ nav {
     right: 0%;
     top: 0%;
     z-index: 2;
-    width: 10vw;
-    height: 100vh;
+    width: 10%;
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
 }
 
 .navItem {
@@ -20,11 +21,10 @@ nav {
     border-image-outset: 8px;
     border-image-repeat: stretch;
     border-style: solid;
-    width: 120%;
+    width: 100%;
     height: 10%;
     margin: 0;
     padding: 0;
-    right: -30%;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
@@ -52,6 +52,6 @@ nav {
     margin-left: 10%;
     color: black;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: 'Share Tech Mono', sans-serif;
 }
