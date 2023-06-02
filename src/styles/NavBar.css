@@ -18,6 +18,7 @@ nav {
     border-radius: 8px;
     border-image-source: linear-gradient(#00d3d3, #7500d4);
     border-image-outset: 8px;
+    border-image-repeat: stretch;
     border-style: solid;
     width: 120%;
     height: 10%;
