@@ -11,6 +11,12 @@
 .listContainer {
     display: flex;
     flex-direction: column;
+    justify-content:center;
+}
+
+.hContainer {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -19,6 +25,10 @@ body .container {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.backImage .container {
+    background-color: inherit;
 }
 
 .container p {

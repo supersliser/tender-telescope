@@ -5,6 +5,7 @@ import logo from "../images/logo.jpg";
 const backPri = frontmatter.colour.backPri;
 const backSec = frontmatter.colour.backSec;
 import Anim from "../components/AnimationBlock.astro";
+import "../styles/Default.css";
 ---
 
 <html lang="en">
@@ -15,24 +16,23 @@ import Anim from "../components/AnimationBlock.astro";
         <meta name="generator" content={Astro.generator} />
         <title>{frontmatter.title} - Thomas Lower</title>
     </head>
-    <body>
+    <body class="backImage">
         <Nav />
-        <div class="backColour">
-            <div class="item">
-                <Anim class="anim" startLocation="bottom">
-                    <h1 class="projectTitle">{frontmatter.title}</h1>
-                </Anim>
-                <Anim class="anim" startLocation="right">
-                    <img
-                        class="imgOverride"
-                        src={frontmatter.image}
-                        alt="primary image of the render"
-                    />
-                </Anim>
-            </div>
-            <div class="containerV">
-                <slot />
-            </div>
+        <div class="container hContainer" style="padding-top: 5%; padding-bottom: 10%;">
+            <Anim startLocation="bottom">
+                <section>
+                    <h1 class="title">{frontmatter.title}</h1>
+                </section>
+            </Anim>
+            <section style="width:80%;">
+                <img
+                    src={frontmatter.image}
+                    alt="primary image of the render"
+                />
+            </section>
+        </div>
+        <div class="listContainer">
+            <slot />
         </div>
     </body>
     <style define:vars={{ backPri, backSec }}>
@@ -40,32 +40,13 @@ import Anim from "../components/AnimationBlock.astro";
         @import "@fontsource/comic-neue";
         @import "@fontsource-variable/outfit";
 
-        body {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            border-radius: 0;
-        }
-        .backColour {
+        .backImage {
             background-image: linear-gradient(var(--backPri), var(--backSec));
         }
-        .basicFill {
-            width: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-top: 10%;
-        }
-        div.containerV {
-            justify-content: stretch;
-            flex-direction: column;
-            align-items: center;
-        }
-        .img {
-            width: 40%;
-            border-radius: 8px;
-        }
-        .anim {
-            width: 40%;
+
+        .title,
+        .subtitle {
+            color: white;
         }
     </style>
 </html>

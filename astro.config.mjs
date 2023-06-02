@@ -9,5 +9,5 @@ import image from "@astrojs/image";
 export default defineConfig({
   output: "static",
   adapter: vercel(),
-  integrations: [react(), mdx(), image()]
+  integrations: [react(), mdx()]
 });
