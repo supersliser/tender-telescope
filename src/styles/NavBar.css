@@ -54,6 +54,11 @@ nav {
     margin-right: 10%;
 }
 
+.navContainer:hover::after {
+    animation: NavSelected backwards 0.5s ease-in-out;
+    margin-right: 0%;
+}
+
 .navItem a {
     margin-right: 30%;
     margin-left: 10%;
