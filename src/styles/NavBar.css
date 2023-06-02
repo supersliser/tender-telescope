@@ -31,22 +31,22 @@ nav {
 
 @keyframes NavSelected {
     from {
-        margin-left: -110%;
+        margin-right: -110%;
     }
 
     to {
-        margin-left: -30%;
+        margin-right: -30%;
     }
 }
 
 .navItem:hover {
     animation: NavSelected 0.5s ease-in-out;
-    margin-left: -30%;
+    margin-right: -30%;
 }
 
 .navItem a {
-    margin-left: 30%;
-    margin-right: 10%;
+    margin-right: 30%;
+    margin-left: 10%;
     color: black;
     text-decoration: none;
     font-size: 2rem;
