@@ -17,6 +17,7 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
+    margin-right: -10%;
 }
 
 .navItem {
