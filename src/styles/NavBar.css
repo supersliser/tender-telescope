@@ -1,6 +1,6 @@
 @import '@fontsource/share-tech-mono';
 
-nav {
+.navContainer {
     position: fixed;
     right: 0%;
     top: 0%;
@@ -8,8 +8,11 @@ nav {
     width: 10%;
     height: 100%;
     margin: 0;
-    margin-right: -10%;
+    margin-right: 0%;
     padding: 0;
+}
+
+nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,17 +38,17 @@ nav {
 
 @keyframes NavSelected {
     from {
-        margin-right: -10%;
+        margin-right: 0%;
     }
 
     to {
-        margin-right: 0%;
+        margin-right: 10%;
     }
 }
 
-nav:hover {
+.navContainer:hover {
     animation: NavSelected 0.5s ease-in-out;
-    margin-right: 0%;
+    margin-right: 10%;
 }
 
 .navItem a {
