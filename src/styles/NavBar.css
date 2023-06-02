@@ -63,6 +63,7 @@ nav {
     font-size: 1rem;
     padding: 0;
     margin: 0;
+    width: 90%
 }
 
 .label {
@@ -71,4 +72,25 @@ nav {
     border-color: #00eeff;
     border-radius: 8px;
     width: 30%;
+}
+
+@media screen and (max-width: 1000px) {
+    .label {
+        display: none;
+        width: 0%;
+    }
+    .label p {
+        display: none;
+    }
+
+    .navContainer {
+        width: 100%;
+        height: 5%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
