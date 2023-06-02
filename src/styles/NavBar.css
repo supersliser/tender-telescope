@@ -10,6 +10,10 @@
     margin: 0;
     margin-right: 0%;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
@@ -67,11 +71,10 @@ nav {
 .label p {
     rotate: 90;
     font-size: 1rem;
-    
 }
 
 .label {
-    position:relative;
+    position: relative;
     right: 0;
     background-color: #3d4aff;
     border-color: #00eeff;
