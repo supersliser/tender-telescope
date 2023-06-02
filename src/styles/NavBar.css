@@ -16,13 +16,13 @@ nav {
 
 .navItem {
     border-radius: 8px;
-    border-image: radial-gradient(#00d3d3, #7500d4);
+    border-image: linear-gradient(#00d3d3, #7500d4);
     border-style: solid;
     width: 120%;
     height: 10%;
     margin: 0;
     padding: 0;
-    margin-right: -110%;
+    right: -30%;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
@@ -32,17 +32,17 @@ nav {
 
 @keyframes NavSelected {
     from {
-        margin-right: -110%;
+        margin-right: -30%;
     }
 
     to {
-        margin-right: -30%;
+        margin-right: 0%;
     }
 }
 
 .navItem:hover {
     animation: NavSelected 0.5s ease-in-out;
-    margin-right: -30%;
+    margin-right: 0%;
 }
 
 .navItem a {
