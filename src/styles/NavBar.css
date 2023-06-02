@@ -18,16 +18,15 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
     margin-left: 100%;
 }
 
 .navItem {
-    border-radius: 8px;
+    /* border-radius: 8px;
     border-image-source: linear-gradient(#00d3d3, #7500d4);
     border-image-outset: 8px;
     border-image-repeat: stretch;
-    border-style: solid;
+    border-style: solid; */
     width: 100%;
     height: 10%;
     margin: 0;
