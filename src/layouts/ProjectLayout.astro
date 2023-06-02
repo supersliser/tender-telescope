@@ -2,10 +2,9 @@
 const { frontmatter } = Astro.props;
 import Nav from "../components/NavBar.astro";
 import logo from "../images/logo.jpg";
-import "../styles/Projects.css";
 const backPri = frontmatter.colour.backPri;
 const backSec = frontmatter.colour.backSec;
-import Anim from "../components/AnimationBlock.astro"
+import Anim from "../components/AnimationBlock.astro";
 ---
 
 <html lang="en">
@@ -19,12 +18,17 @@ import Anim from "../components/AnimationBlock.astro"
     <body>
         <Nav />
         <div class="backColour">
-            <div> 
-                <Anim class="anim" startLocation="bottom"><h1 class="titleText">{frontmatter.title}</h1></Anim>
-                <Anim class="anim" startLocation="right"><img class="imgOverride"
-                    src={frontmatter.image}
-                    alt="primary image of the render"
-                /></Anim>
+            <div class="item">
+                <Anim class="anim" startLocation="bottom">
+                    <h1 class="projectTitle">{frontmatter.title}</h1>
+                </Anim>
+                <Anim class="anim" startLocation="right">
+                    <img
+                        class="imgOverride"
+                        src={frontmatter.image}
+                        alt="primary image of the render"
+                    />
+                </Anim>
             </div>
             <div class="containerV">
                 <slot />
@@ -32,6 +36,10 @@ import Anim from "../components/AnimationBlock.astro"
         </div>
     </body>
     <style define:vars={{ backPri, backSec }}>
+        @import "@fontsource-variable/rubik";
+        @import "@fontsource/comic-neue";
+        @import "@fontsource-variable/outfit";
+
         body {
             width: 100%;
             padding: 0;
@@ -40,6 +48,24 @@ import Anim from "../components/AnimationBlock.astro"
         }
         .backColour {
             background-image: linear-gradient(var(--backPri), var(--backSec));
+        }
+        .basicFill {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 10%;
+        }
+        div.containerV {
+            justify-content: stretch;
+            flex-direction: column;
+            align-items: center;
+        }
+        .img {
+            width: 40%;
+            border-radius: 8px;
+        }
+        .anim {
+            width: 40%;
         }
     </style>
 </html>

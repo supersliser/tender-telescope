@@ -1,7 +1,8 @@
 ---
 const { image, title, float, link, mb } = Astro.props;
 import AnimBlock from "../components/AnimationBlock.astro";
-import "../styles/HoverUnderline.css"
+import "../styles/HoverUnderline.css";
+import "../styles/Default.css";
 var ml = "10%";
 var mr = "10%";
 if (float == "left") {
@@ -16,42 +17,40 @@ if (float == "left") {
 }
 ---
 
+<div class="itemContainer">
+    <a class="link" href={link}>
+        <AnimBlock class="container" startLocation="bottom">
+            <p class="hover-underline-animation subtitle">{title}</p>
+        </AnimBlock>
+        <AnimBlock class="container" startlocation="right">
+            <div>
+                <img src={image} alt={"an image displaying " + title} />
+            </div>
+        </AnimBlock>
+    </a>
+</div>
+
 <style define:vars={{ ml, mr, mb }}>
     @import "@fontsource-variable/baloo-bhaina-2";
     .itemContainer {
-        width: 60%;
-        margin-bottom: var(-mb)%;
+        width: 30%;
+        height: 30%;
+        margin-top: var(--mb);
         margin-left: var(--ml);
         margin-right: var(--mr);
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-color: #000000;
     }
-    .AnimBlock {
-        width: 35vw;
+
+    .container div {
+        height: 100%;
     }
-    img {
-        width: 50%;
+
+    .container {
+        padding-bottom: 5%;
     }
-    .p {
-        font-family: "Baloo Bhaina 2 Variable", sans-serif;
-        font-weight: 400;
-        font-size: 2rem;
-        text-decoration: none;
-        color: black;
+
+    .itemContainer a {
         width: 100%;
-        line-height: 1;
+        height: 100%;
     }
 </style>
-
-<a class="itemContainer p" href={link}
-    ><div class="itemContainer">
-        <AnimBlock class="AnimBlock" startLocation="bottom">
-            <p class="hover-underline-animation p">{title}</p>
-        </AnimBlock>
-        <AnimBlock class="AnimBlock" startlocation="right">
-            <img src={image} alt={"an image displaying " + title} />
-        </AnimBlock>
-    </div></a
->

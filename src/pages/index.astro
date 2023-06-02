@@ -3,61 +3,49 @@ import BasicLayout from "../layouts/NewBasicLayout.astro";
 import AnimBlock from "../components/AnimationBlock.astro";
 import Item from "../components/Item.astro";
 const title = "Home";
-import "../styles/newDefault.css";
 import "../styles/HoverUnderline.css";
+import "../styles/Default.css";
 
 const renders = await Astro.glob("../pages/projects/renders/*.mdx");
 
 var filteredPages = [];
-var randoms = [];
-var mbs = [];
 for (var i = 0; i < renders.length; i++) {
     if (renders[i].frontmatter.featured) {
         filteredPages.push(renders[i]);
-        const temp = Math.floor(Math.random() * 2);
-        if (temp == 0) {
-            randoms.push("left");
-        } else if (temp == 1) {
-            randoms.push("right");
-        } else if (temp == 2) {
-            randoms.push("center");
-        }
-        mbs.push(Math.floor(Math.random() * 20))
     }
 }
 ---
 
 <BasicLayout title={title}>
-    <div class="totalContainer basicFill">
-        <AnimBlock backColour="#ffffff">
-            <p class="titleText">
-                I am a <a href="/projects/renders/"
+    <div class="container">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
+                I am a <a class="link" href="/projects/renders/"
                     ><span class="hover-underline-animation">3D modeller</span
                     ></a
                 >
             </p>
         </AnimBlock>
-        <AnimBlock backColour="#ffffff">
-            <p class="titleText">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
                 I am a <span class="hover-underline-animation">programmer</span>
             </p>
         </AnimBlock>
-        <AnimBlock backColour="#ffffff">
-            <p class="titleText">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
                 I am a <span class="hover-underline-animation">voice actor</span
                 >
             </p>
         </AnimBlock>
-        <AnimBlock backColour="#ffffff">
-            <p class="titleText">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
                 I am <span class="hover">Thomas Lower</span>
             </p>
         </AnimBlock>
     </div>
-    <div class="basicFill">
-        <div class="items">
-            <AnimBlock startLocation="right">
-                <p class="smallerText">
+    <div style="margin-top: 10%;" class="container listContainer">
+            <AnimBlock startLocation="right" class="container">
+                <p class="subtitle">
                     Som<span class="hover-underline-animation"
                         >e of the stuff I've made</span
                     >
@@ -69,13 +57,12 @@ for (var i = 0; i < renders.length; i++) {
                         image={page.frontmatter.image}
                         title={page.frontmatter.title}
                         float={
-                            randoms[Math.floor(Math.random() * randoms.length)]
+                            Math.floor(Math.random() * 2)
                         }
                         link={page.url}
-                        mb={mbs[Math.floor(Math.random() * randoms.length)]}
+                        mb={Math.floor(Math.random() * 20) + "%"}
                     />
                 ))
             }
-        </div>
     </div>
 </BasicLayout>

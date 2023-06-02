@@ -1,0 +1,84 @@
+@import '@fontsource-variable/rubik';
+
+.container {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+body .container {
+    background-color: white;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.container p {
+    width: 100%;
+}
+
+.title,
+.subtitle {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    color: black;
+    font-family: "Rubik Variable", sans-serif;
+    line-height: 1;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.subtitle {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.hover {
+    color: #00ffea;
+}
+
+@keyframes colourChange {
+    from {
+        color: #00ffea;
+    }
+
+    to {
+        color: #4f00a8;
+    }
+}
+
+.hover:hover {
+    animation: colourChange 1s ease-in-out;
+    color: #4f00a8;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 5vw;
+    }
+    
+    .subtitle {
+        font-size: 3vw;
+    }
+}
+
+img {
+    height: 100%;
+}
