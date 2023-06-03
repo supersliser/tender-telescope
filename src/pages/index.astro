@@ -2,6 +2,7 @@
 import BasicLayout from "../layouts/NewBasicLayout.astro";
 import AnimBlock from "../components/AnimationBlock.astro";
 import Item from "../components/Item.astro";
+import ListItem from "../components/listItem.astro";
 const title = "Home";
 import "../styles/HoverUnderline.css";
 import "../styles/Default.css";
@@ -43,26 +44,46 @@ for (var i = 0; i < renders.length; i++) {
             </p>
         </AnimBlock>
     </div>
-    <div style="margin-top: 10%;" class="container listContainer">
-            <AnimBlock startLocation="right" class="container">
-                <p class="subtitle">
-                    Som<span class="hover-underline-animation"
-                        >e of the stuff I've made</span
-                    >
-                </p>
-            </AnimBlock>
-            {
-                filteredPages.map((page) => (
-                    <Item
-                        image={page.frontmatter.image}
-                        title={page.frontmatter.title}
-                        float={
-                            Math.floor(Math.random() * 2)
-                        }
-                        link={page.url}
-                        mb={Math.floor(Math.random() * 20) + "%"}
-                    />
-                ))
-            }
+    <div style="margin-top: 20%;" class="container listContainer">
+        <AnimBlock startLocation="right" class="container">
+            <p class="subtitle">
+                Som<span class="hover-underline-animation"
+                    >e of the stuff I've made</span
+                >
+            </p>
+        </AnimBlock>
+        {
+            filteredPages.map((page) => (
+                <Item
+                    image={page.frontmatter.image}
+                    title={page.frontmatter.title}
+                    float={Math.floor(Math.random() * 2)}
+                    link={page.url}
+                    mb={Math.floor(Math.random() * 20) + 5 + "%"}
+                />
+            ))
+        }
+    </div>
+    <div style="margin-top: 20%;" class="listContainer darkContainer">
+        <AnimBlock startlocation="left" class="container">
+            <p
+                class="subtitle"
+                style="color:white; padding-top: 15%; padding-bottom: 5%;"
+            >
+                A few things <span class="hover-underline-animation"
+                    >about me</span>
+            </p>
+        </AnimBlock>
+        <div class="hContainer">
+            <ListItem title="Qualficiations">
+                <li>Computer Science A level - Grade A</li>
+            </ListItem>
+            <ListItem title="Skills">
+                <li>Web development</li>
+            </ListItem>
+            <ListItem title="Interests">
+                <li>Mixed Martial Arts</li>
+            </ListItem>
+        </div>
     </div>
 </BasicLayout>
