@@ -8,11 +8,17 @@ import "../styles/HoverUnderline.css";
 import "../styles/Default.css";
 
 const renders = await Astro.glob("../pages/projects/renders/*.mdx");
+const programs = await Astro.glob("../pages/projects/programming/*.mdx");
 
 var filteredPages = [];
 for (var i = 0; i < renders.length; i++) {
     if (renders[i].frontmatter.featured) {
         filteredPages.push(renders[i]);
+    }
+}
+for (var i = 0; i < programs.length; i++) {
+    if (programs[i].frontmatter.featured) {
+        filteredPages.push(programs[i]);
     }
 }
 ---
@@ -29,7 +35,10 @@ for (var i = 0; i < renders.length; i++) {
         </AnimBlock>
         <AnimBlock backColour="#ffffff" class="container">
             <p style="text-align: left;" class="title">
-                I am a <span class="hover-underline-animation">programmer</span>
+                I am a <a class="link" href="/projects/programming/"
+                    ><span class="hover-underline-animation">programmer</span
+                    ></a
+                >
             </p>
         </AnimBlock>
         <AnimBlock backColour="#ffffff" class="container">
@@ -71,7 +80,8 @@ for (var i = 0; i < renders.length; i++) {
                 style="color:white; padding-top: 15%; padding-bottom: 5%;"
             >
                 A few things <span class="hover-underline-animation"
-                    >about me</span>
+                    >about me</span
+                >
             </p>
         </AnimBlock>
         <div class="hContainer">
