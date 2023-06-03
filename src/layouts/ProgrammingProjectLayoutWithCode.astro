@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/ProjectLayout.astro"
+const { frontmatter } = Astro.props;
+import "../styles/Projects.css"
+---
+
+<Layout frontmatter={frontmatter}>
+    <slot />
+    <a class="link subtitle" style="color: white; width: 100%; text-align: center;" href={frontmatter.link}>Click me to head to the project</a>
+    <a class="link subtitle" style="color: white; width: 100%; text-align: center;" href={frontmatter.codeLink}>Click me to head to the project source code</a>
+</Layout>
