@@ -1,0 +1,34 @@
+---
+import Layout from "../../../layouts/ProjectIndexLayout.astro";
+import AnimBlock from "../../../components/AnimationBlock.astro";
+import Item from "../../../components/Item.astro";
+const title = "Voice Acting";
+import "../../../styles/Projects.css";
+import "../../../styles/HoverUnderline.css";
+const pages = await Astro.glob("../va/*.mdx");
+---
+
+<Layout title={title}>
+    <div class="basicFill">
+        <AnimBlock startLocation="bottom"><p class="titleText">
+            I am a <span class="hover-underline-animation">Voice Actor</span>
+        </p></AnimBlock>
+        <p class="subtitleText">
+            Voice Acting is a fun hobby of mine, heres a few of the things ive worked on:
+        </p>
+    </div>
+    <div class="basicFill">
+        <div class="items">
+            {
+                pages.map((page) => 
+                    <Item
+                        image={page.frontmatter.image}
+                        title={page.frontmatter.title}
+                        float="right"
+                        link={page.url}
+                    />
+                )
+            }
+        </div>
+    </div>
+</Layout>

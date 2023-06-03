@@ -68,6 +68,8 @@ nav {
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Share Tech Mono', sans-serif;
+    width: 90%;
+    text-align: right;
 }
 
 .label p {

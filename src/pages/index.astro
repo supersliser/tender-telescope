@@ -9,6 +9,7 @@ import "../styles/Default.css";
 
 const renders = await Astro.glob("../pages/projects/renders/*.mdx");
 const programs = await Astro.glob("../pages/projects/programming/*.mdx");
+const va = await Astro.glob("../pages/projects/va/*.mdx");
 
 var filteredPages = [];
 for (var i = 0; i < renders.length; i++) {
@@ -19,6 +20,11 @@ for (var i = 0; i < renders.length; i++) {
 for (var i = 0; i < programs.length; i++) {
     if (programs[i].frontmatter.featured) {
         filteredPages.push(programs[i]);
+    }
+}
+for (var i = 0; i < va.length; i++) {
+    if (va[i].frontmatter.featured) {
+        filteredPages.push(va[i]);
     }
 }
 ---
@@ -43,7 +49,9 @@ for (var i = 0; i < programs.length; i++) {
         </AnimBlock>
         <AnimBlock backColour="#ffffff" class="container">
             <p style="text-align: left;" class="title">
-                I am a <span class="hover-underline-animation">voice actor</span
+                I am a <a class="link" href="/projects/va/"
+                ><span class="hover-underline-animation">voice actor</span
+                ></a
                 >
             </p>
         </AnimBlock>
