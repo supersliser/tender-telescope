@@ -1,0 +1,38 @@
+---
+layout: "../../../layouts/ProjectLayout.astro"
+title: "Procedural Slime Texture"
+image: "../../../images/slime/Slime.jpg"
+colour: 
+    backPri: "#330055"
+    backSec: "#28461f"
+featured: false
+---
+import "../../../styles/Projects.css"
+import "../../../styles/Default.css"
+import Anim from "../../../components/AnimationBlock.astro"
+import gif from "../../../images/slime/Slime.gif"
+import spikey from "../../../images/slime/untitled.png"
+
+<div class="hContainer">
+
+<section>
+<img src={gif} alt="an image displaying the forest from an inside perspective, with fireflies above the head" />
+</section>
+
+<section>
+This slime texture takes advantage of the nature of 4 dimensions. Imagine a 3 Dimensional cube if you will, when you travel up one axis, the other 2 axis get smaller as you get further away from their origin. However, this is not a snapping sort of motion, rather it is a continual shrinking movement. This mode of movement is useful however the direction is wrong.
+</section>
+
+</div>
+
+<div class="hContainer">
+
+<section>
+No matter which axis we travel across, the other 2 axis will get smaller in a 3 dimensional shape. What we need is a 4th axis, one that can manipulate our perspective of the other 3. This is where the concept of a 4D object comes in. This continual movement without the shrinking of individual axis creates a flowing-like movement. This concept can then be applied to a model to give it a fluid texture.
+</section>
+
+<section>
+<img src={spikey} alt="an image displaying the forest from an inside perspective, with fireflies above the head" />
+</section>
+
+</div>

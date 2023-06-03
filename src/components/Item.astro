@@ -1,20 +1,8 @@
 ---
-const { image, title, float, link, mb } = Astro.props;
+const { image, title, ml, link, mb } = Astro.props;
 import AnimBlock from "../components/AnimationBlock.astro";
 import "../styles/HoverUnderline.css";
 import "../styles/Default.css";
-var ml = "10%";
-var mr = "10%";
-if (float == "left") {
-    ml = "5%";
-    mr = "15%";
-} else if (float == "right") {
-    ml = "15%";
-    mr = "5%";
-} else if (float == "center") {
-    ml = "10%";
-    mr = "10%";
-}
 ---
 
 <div class="itemContainer">
@@ -26,12 +14,11 @@ if (float == "left") {
     </a>
 </div>
 
-<style define:vars={{ ml, mr, mb }}>
+<style define:vars={{ ml, mb }}>
     @import "@fontsource-variable/baloo-bhaina-2";
     .itemContainer {
         width: 60%;
         margin-top: var(--mb);
         margin-left: var(--ml);
-        margin-right: var(--mr);
     }
 </style>

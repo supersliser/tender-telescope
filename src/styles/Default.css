@@ -80,6 +80,7 @@ body .container {
     color: black;
 }
 
+
 @media screen and (max-width: 1000px) {
     .title {
         font-size: 5vw;
@@ -108,4 +109,12 @@ li {
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.thisShouldbeIgnored {
+    color: #1a1a1a
+}
+
+body {
+    min-height: 100vh;
 }

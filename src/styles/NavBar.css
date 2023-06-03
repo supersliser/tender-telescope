@@ -138,5 +138,7 @@ nav {
         text-decoration: none;
         font-size: 2rem;
         font-family: 'Share Tech Mono', sans-serif;
+        text-align: right;
+        width: 100%;
     }
 }
