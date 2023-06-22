@@ -10,10 +10,15 @@ const pages = await Astro.glob("../renders/*.mdx");
 
 <Layout title={title}>
     <div class="basicFill">
-        <AnimBlock startLocation="bottom"><p class="titleText">
-            I am a <span class="hover-underline-animation">3D modeller</span>
-        </p></AnimBlock>
-        <p class="subtitleText">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
+                I am a <a class="link" href="/projects/renders/"
+                    ><span class="hover-underline-animation">3D modeller</span
+                    ></a
+                >
+            </p>
+        </AnimBlock>
+        <p class="subtitle">
             These are some of my favourite models, all made by me:
         </p>
     </div>

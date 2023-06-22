@@ -10,10 +10,15 @@ const pages = await Astro.glob("../va/*.mdx");
 
 <Layout title={title}>
     <div class="basicFill">
-        <AnimBlock startLocation="bottom"><p class="titleText">
-            I am a <span class="hover-underline-animation">Voice Actor</span>
-        </p></AnimBlock>
-        <p class="subtitleText">
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
+                I am a <a class="link" href="/projects/renders/"
+                    ><span class="hover-underline-animation">Voice Actor</span
+                    ></a
+                >
+            </p>
+        </AnimBlock>
+        <p class="subtitle">
             Voice Acting is a fun hobby of mine, heres a few of the things ive worked on:
         </p>
     </div>

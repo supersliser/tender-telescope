@@ -10,24 +10,30 @@ const pages = await Astro.glob("../programming/*.mdx");
 
 <Layout title={title}>
     <div class="basicFill">
-        <AnimBlock startLocation="bottom"><p class="titleText">
-            I am a <span class="hover-underline-animation">Programmer</span>
-        </p></AnimBlock>
-        <p class="subtitleText">
-            Computers are my life and programming them is my passion. Enjoy some of my favourite projects:
+        <AnimBlock backColour="#ffffff" class="container">
+            <p style="text-align: left;" class="title">
+                I am a <a class="link" href="/projects/renders/"
+                    ><span class="hover-underline-animation">Programmer</span
+                    ></a
+                >
+            </p>
+        </AnimBlock>
+        <p class="subtitle">
+            Computers are my life and programming them is my passion. Enjoy some
+            of my favourite projects:
         </p>
     </div>
     <div class="basicFill">
         <div class="items">
             {
-                pages.map((page) => 
+                pages.map((page) => (
                     <Item
                         image={page.frontmatter.image}
                         title={page.frontmatter.title}
                         float="right"
                         link={page.url}
                     />
-                )
+                ))
             }
         </div>
     </div>
