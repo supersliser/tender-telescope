@@ -1,0 +1,28 @@
+---
+layout: "../../../layouts/ProjectLayout.astro"
+title: "Spiderman"
+image: "../../../images/spiderman/spooderman.png"
+colour: 
+    backPri: "#000000"
+    backSec: "#53008f"
+featured: true
+---
+import "../../../styles/Projects.css"
+import "../../../styles/Default.css"
+import Anim from "../../../components/AnimationBlock.astro"
+import vid from "../../../images/spiderman/635741_final.mp4"
+
+<div class="hContainer">
+
+<section>
+    <video controls>
+        <source src={vid} type="video/mp4"/>
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+<section>
+While the original spiderman model is not homemade, the cape and environment are. The entire scene is designed to implement a horror-esque effect. The cloak is modelled using Blender's physics engine and the spiderman model is animated using Cascadeur. The song is a cover of Paint it Black from the rolling stones.
+</section>
+
+</div>
