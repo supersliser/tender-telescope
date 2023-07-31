@@ -2,10 +2,10 @@
 import Layout from "../../../layouts/ProjectIndexLayout.astro";
 import AnimBlock from "../../../components/AnimationBlock.astro";
 import Item from "../../../components/Item.astro";
-const title = "Renders";
+const title = "Web Development";
 import "../../../styles/Projects.css";
 import "../../../styles/HoverUnderline.css";
-const pages = await Astro.glob("../renders/*.mdx");
+const pages = await Astro.glob("../websites/*.mdx");
 import video from "../../../images/PortfolioVideo.mp4";
 import TitleItem from "../../../components/TitleItem.astro";
 ---
@@ -15,7 +15,8 @@ import TitleItem from "../../../components/TitleItem.astro";
       <TitleItem text="3D modeller" link="/projects/renders/" />
 
       <p class="subtitle">
-        These are some of my favourite models, all made by me:
+        Voice Acting is a fun hobby of mine, heres a few of the things ive
+        worked on:
       </p>
     </div>
     <div class="basicFill">

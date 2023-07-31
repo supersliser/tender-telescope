@@ -1,10 +1,11 @@
 ---
-const { title } = Astro.props;
+const { title, video } = Astro.props;
 import Nav from "../components/NavBar.astro";
 export const prerender = true;
 import Top from "../components/NewTop.astro";
 import logo from "../images/logo.jpg";
 import "../styles/Default.css";
+import Background from "../components/Background.astro";
 ---
 
 <html lang="en">
@@ -17,8 +18,9 @@ import "../styles/Default.css";
     </head>
     <body>
         <Nav />
-        <Top />
+        <Background video={video}>
         <slot />
+        </Background>
     </body>
     <style>
         body {

@@ -1,5 +1,5 @@
 ---
-const { image, title, ml, link, mb } = Astro.props;
+const { image, title, ml, link } = Astro.props;
 import AnimBlock from "../components/AnimationBlock.astro";
 import "../styles/HoverUnderline.css";
 import "../styles/Default.css";
@@ -7,18 +7,16 @@ import "../styles/Default.css";
 
 <div class="itemContainer">
     <a class="link container" href={link}>
-        <AnimBlock startLocation="bottom">
             <p class="hover-underline-animation subtitle" style="margin-bottom: 5%;">{title}</p>
-        </AnimBlock>
         <img src={image} alt={"an image displaying " + title} />
     </a>
 </div>
 
-<style define:vars={{ ml, mb }}>
+<style define:vars={{ ml, }}>
     @import "@fontsource-variable/baloo-bhaina-2";
     .itemContainer {
         width: 60%;
-        margin-top: var(--mb);
+        margin-top: 5%;
         margin-left: var(--ml);
     }
 </style>

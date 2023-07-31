@@ -1,0 +1,27 @@
+<style>
+    .backPanel {
+        width: 80%;
+        height: fit-content;
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-width: 3px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #21deff, #5f03c7) 1 100%;
+        height: max-content;
+    }
+    .blur {
+        backdrop-filter: blur(8px);
+    }
+    @media screen and (max-width: 1200px) {
+        .backPanel {
+            margin-top: 5%;
+        }
+    }
+</style>
+
+<div class="backPanel">
+    <div class="blur">
+        <slot />
+    </div>
+</div>

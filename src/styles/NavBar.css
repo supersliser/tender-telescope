@@ -13,7 +13,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: -7%;
+    margin-left: -8%;
 }
 
 .separator {
@@ -27,6 +27,10 @@
 .ignore {
     width: 100%;
     height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 nav {
@@ -50,11 +54,11 @@ nav {
 
 @keyframes NavSelected {
     from {
-        margin-left: -7%;
+        margin-left: -8%;
     }
 
     to {
-        margin-left: 0%;
+        margin-left: -2%;
     }
 }
 
@@ -109,7 +113,7 @@ nav {
     align-items: center;
 }
 
-/* @media screen and (max-width: 1500px)
+@media screen and (max-width: 1500px)
 {
     .label {
         width: min-content;
@@ -128,13 +132,26 @@ nav {
     }
     .label p {
         display: none;
+        font-size: 0.75rem;
     }
 
     .separator {
         width: 100%;
-        flex-direction: column;
+        display:flex;
+        flex-direction: row;
+        justify-content: stretch;
     }
 
+    .socialMedia {
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        width: 30%;
+    }
+
+    .socialMediaItem {
+        width: 10%;
+        height: 300%;
+    }
     .navContainer {
         width: 100%;
         height: 3rem;
@@ -163,12 +180,14 @@ nav {
     }
 
     .ignore {
-        flex-direction: column;
-        width: 100%;
+        width: 70%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .navItem {
-        width: 10%;
+        width: 15%;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -186,4 +205,4 @@ nav {
         text-align: right;
         width: 100%;
     }
-} */
+}

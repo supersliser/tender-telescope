@@ -6,120 +6,89 @@ import ListItem from "../components/listItem.astro";
 const title = "Home";
 import "../styles/HoverUnderline.css";
 import "../styles/Default.css";
+import video from "../images/PortfolioVideo.mp4";
+import TitleItem from "../components/TitleItem.astro";
 
 const renders = await Astro.glob("../pages/projects/renders/*.mdx");
 const programs = await Astro.glob("../pages/projects/programming/*.mdx");
-const va = await Astro.glob("../pages/projects/va/*.mdx");
+const va = await Astro.glob("../pages/projects/websites/*.mdx");
 
 var filteredPages = [];
 for (var i = 0; i < renders.length; i++) {
-    if (renders[i].frontmatter.featured) {
-        filteredPages.push(renders[i]);
-    }
+  if (renders[i].frontmatter.featured) {
+    filteredPages.push(renders[i]);
+  }
 }
 for (var i = 0; i < programs.length; i++) {
-    if (programs[i].frontmatter.featured) {
-        filteredPages.push(programs[i]);
-    }
+  if (programs[i].frontmatter.featured) {
+    filteredPages.push(programs[i]);
+  }
 }
 for (var i = 0; i < va.length; i++) {
-    if (va[i].frontmatter.featured) {
-        filteredPages.push(va[i]);
-    }
+  if (va[i].frontmatter.featured) {
+    filteredPages.push(va[i]);
+  }
 }
 ---
 
-<BasicLayout title={title}>
-    <div class="container">
-        <AnimBlock backColour="#ffffff" class="container">
-            <p style="text-align: left;" class="title">
-                I am a <a class="link" href="/projects/renders/"
-                    ><span class="hover-underline-animation">3D modeller</span
-                    ></a
-                >
-            </p>
-        </AnimBlock>
-        <AnimBlock backColour="#ffffff" class="container">
-            <p style="text-align: left;" class="title">
-                I am a <a class="link" href="/projects/programming/"
-                    ><span class="hover-underline-animation">programmer</span
-                    ></a
-                >
-            </p>
-        </AnimBlock>
-        <AnimBlock backColour="#ffffff" class="container">
-            <p style="text-align: left;" class="title">
-                I am a <a class="link" href="/projects/va/"
-                ><span class="hover-underline-animation">voice actor</span
-                ></a
-                >
-            </p>
-        </AnimBlock>
-        <AnimBlock backColour="#ffffff" class="container">
-            <p style="text-align: left;" class="title">
-                I am <span class="hover">Thomas Lower</span>
-            </p>
-        </AnimBlock>
+<BasicLayout title={title} video={video}>
+      <TitleItem text="3D modeller" link="/projects/renders/"/>
+      <TitleItem text="programmer" link="/projects/programming/"/>
+      <TitleItem text="web developer" link="/projects/websites/"/>
+      <p style="text-align: left;" class="title">
+        I am <span class="hover">Thomas Lower</span>
+      </p>
+
+    <div class="container listContainer">
+        <p class="subtitle" style="margin-top: 40%; margin-bottom: 20%;">
+          Som<span class="hover-underline-animation"
+            >e of the stuff I've made:</span
+          >
+        </p>
+      {
+        filteredPages.map((page) => (
+          <Item
+            image={page.frontmatter.image}
+            title={page.frontmatter.title}
+            ml={Math.floor(Math.random() * 40) + 5 + "%"}
+            link={page.url}
+          />
+        ))
+      }
     </div>
-    <div style="margin-top: 20%;" class="container listContainer">
-        <AnimBlock startLocation="right" class="container">
-            <p class="subtitle">
-                Som<span class="hover-underline-animation"
-                    >e of the stuff I've made</span
-                >
-            </p>
-        </AnimBlock>
-        {
-            filteredPages.map((page) => (
-                <Item
-                    image={page.frontmatter.image}
-                    title={page.frontmatter.title}
-                    ml={Math.floor(Math.random() * 40) + 5 + "%"}
-                    link={page.url}
-                    mb={Math.floor(Math.random() * 20) + 5 + "%"}
-                />
-            ))
-        }
-    </div>
-    <div style="margin-top: 20%;" class="listContainer darkContainer">
-        <AnimBlock startlocation="left" class="container">
-            <p
-                class="subtitle"
-                style="color:white; padding-top: 15%; padding-bottom: 5%;"
-            >
-                A few things <span class="hover-underline-animation"
-                    >about me</span
-                >
-            </p>
-        </AnimBlock>
-        <div class="hContainer">
-            <ListItem title="Qualficiations">
-                <li>Computer Science A level - Grade A</li>
-                <li>Psychology A level - Grade A</li>
-                <li>Media Studies A level - Grade A</li>
-                <li>Politics A level - Grade B</li>
-            </ListItem>
-            <ListItem title="Skills">
-                <li>Web development</li>
-                <li>Programming / Software development</li>
-                <li>Voice Acting</li>
-                <li>Editing</li>
-                <li>Camera Management</li>
-                <li>IT Technician</li>
-                <li>3D Modelling</li>
-                <li>Texturing</li>
-                <li>Hardware Management</li>
-            </ListItem>
-            <ListItem title="Interests">
-                <li>Mixed Martial Arts</li>
-                <li>Powerboating</li>
-                <li>Driving</li>
-                <li>Programming</li>
-                <li>Gaming</li>
-                <li>Physics</li>
-                <li>Political / Moral Philosophy</li>
-                <li>Art & Design</li>
-            </ListItem>
-        </div>
+      <p
+        class="subtitle"
+        style="color:white; padding-top: 15%; padding-bottom: 5%;"
+      >
+        A few things <span class="hover-underline-animation">about me</span>
+      </p>
+    <div class="listContainer">
+      <ListItem title="Qualficiations">
+        <li>Computer Science A level - Grade A</li>
+        <li>Psychology A level - Grade A</li>
+        <li>Media Studies A level - Grade A</li>
+        <li>Politics A level - Grade B</li>
+      </ListItem>
+      <ListItem title="Skills">
+        <li>Web development</li>
+        <li>Programming / Software development</li>
+        <li>Voice Acting</li>
+        <li>Editing</li>
+        <li>Camera Management</li>
+        <li>IT Technician</li>
+        <li>3D Modelling</li>
+        <li>Texturing</li>
+        <li>Hardware Management</li>
+      </ListItem>
+      <ListItem title="Interests">
+        <li>Mixed Martial Arts</li>
+        <li>Powerboating</li>
+        <li>Driving</li>
+        <li>Programming</li>
+        <li>Gaming</li>
+        <li>Physics</li>
+        <li>Political / Moral Philosophy</li>
+        <li>Art & Design</li>
+      </ListItem>
     </div>
 </BasicLayout>

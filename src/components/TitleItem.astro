@@ -1,0 +1,9 @@
+---
+const { text, link } = Astro.props;
+---
+<p style="text-align: left;" class="title">
+    I am a <a class="link" href={link}
+        ><span class="hover-underline-animation">{text}</span
+        ></a
+    >
+</p>

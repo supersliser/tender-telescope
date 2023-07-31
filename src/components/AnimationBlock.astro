@@ -1,5 +1,5 @@
 ---
-const { backColour, startLocation } = Astro.props;
+const { startLocation } = Astro.props;
 import Test from "../scripts/test.js";
 var PaddingV = "0px"
 var PaddingH = "0px"
@@ -20,11 +20,10 @@ else {
 }
 ---
 
-<style define:vars={{ backColour, PaddingH, PaddingV }}>
+<style define:vars={{ PaddingH, PaddingV }}>
     div.container {
         width: 100%;
         height: fit-content;
-        background-color: var(--backColour);
         display: block;
         margin: 0;
         padding: 0;

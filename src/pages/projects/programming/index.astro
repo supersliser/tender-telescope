@@ -6,35 +6,28 @@ const title = "Programs";
 import "../../../styles/Projects.css";
 import "../../../styles/HoverUnderline.css";
 const pages = await Astro.glob("../programming/*.mdx");
+import video from "../../../images/PortfolioVideo.mp4";
+import TitleItem from "../../../components/TitleItem.astro";
 ---
 
-<Layout title={title}>
-    <div class="basicFill">
-        <AnimBlock backColour="#ffffff" class="container">
-            <p style="text-align: left;" class="title">
-                I am a <a class="link" href="/projects/programming/"
-                    ><span class="hover-underline-animation">Programmer</span
-                    ></a
-                >
-            </p>
-        </AnimBlock>
-        <p class="subtitle">
-            Computers are my life and programming them is my passion. Enjoy some
-            of my favourite projects:
-        </p>
-    </div>
-    <div class="basicFill">
-        <div class="items">
-            {
-                pages.map((page) => (
-                    <Item
-                        image={page.frontmatter.image}
-                        title={page.frontmatter.title}
-                        float="right"
-                        link={page.url}
-                    />
-                ))
-            }
-        </div>
+<Layout title={title} video={video}>
+    <TitleItem text="programmer" link="/projects/programming/" />
+
+    <p class="subtitle" style="margin-bottom: 30%;">
+      Computers are my life and programming them is my passion. Enjoy some of my
+      favourite projects:
+    </p>
+
+    <div class="items">
+      {
+        pages.map((page) => (
+          <Item
+            image={page.frontmatter.image}
+            title={page.frontmatter.title}
+            ml={Math.floor(Math.random() * 35) + 5 + "%"}
+            link={page.url}
+          />
+        ))
+      }
     </div>
 </Layout>

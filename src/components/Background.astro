@@ -1,0 +1,27 @@
+---
+const { video } = Astro.props;
+import BackPanel from "../components/BackPanel.astro";
+
+---
+
+<style>
+  .background {
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+
+    min-width: 100vw;
+    z-index: -5;
+    background-color: black;
+    position: fixed;
+    top: 0;
+  }
+</style>
+
+<video class="background" autoplay muted loop>
+  <source src={video} type="video/mp4" style="max-height: 100%;" />
+  video not available
+</video>
+<BackPanel>
+  <slot />
+</BackPanel>
