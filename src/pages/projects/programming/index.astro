@@ -18,6 +18,13 @@ import TitleItem from "../../../components/TitleItem.astro";
       favourite projects:
     </p>
 
+    <Item
+    image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/PDF_icon.svg/1792px-PDF_icon.svg.png?height=200width=150"
+    title="Programming Guides"
+    ml={Math.floor(Math.random() * 35) + 5 + "%"}
+    link="/projects/programming/codingguides/"
+    />
+
     <div class="items">
       {
         pages.map((page) => (

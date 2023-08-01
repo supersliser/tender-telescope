@@ -1,0 +1,21 @@
+---
+import Layout from "../../../../../layouts/CodingLayout.astro";
+import Item from "../../../../../components/Item.astro";
+import "../../../../../styles/Coding.css";
+const pages = await Astro.glob("../CSharp/*.mdx");
+import TitleItem from "../../../../../components/TitleItem.astro";
+import LinkBox from "../../../../../components/LinkBox.astro";
+---
+
+<Layout frontmatter="C Sharp">
+    <p class="title">
+      C# - A guide
+    </p>
+    <div class="items">
+        {
+          pages.map((page) => (
+          <LinkBox link={page.url} text={page.frontmatter.title} />
+          ))
+        }
+      </div>
+</Layout>

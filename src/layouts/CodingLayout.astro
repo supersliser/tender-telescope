@@ -1,0 +1,35 @@
+---
+const { frontmatter } = Astro.props;
+import Nav from "../components/NavBar.astro";
+import logo from "../images/logo.jpg";
+import "../styles/Coding.css"
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href={logo}
+        />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title} - Thomas Lower</title>
+    </head>
+    <body>
+        <Nav />
+        <slot />
+    </body>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            border-radius: 0;
+            background-color: #212121;
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+</html>

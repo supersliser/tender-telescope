@@ -1,0 +1,17 @@
+---
+import Layout from "../../../../layouts/CodingLayout.astro";
+import Item from "../../../../components/Item.astro";
+const title = "Coding Guides";
+import "../../../../styles/Coding.css";
+import TitleItem from "../../../../components/TitleItem.astro";
+import LinkBox from "../../../../components/LinkBox.astro";
+---
+
+<Layout frontmatter={title}>
+  <p class="title">
+    Language guides for various different programming languages
+  </p>
+  <div class="items">
+    <LinkBox link="../codingguides/CSharp/" text="Microsoft C#.NET programming language" />
+  </div>
+</Layout>
