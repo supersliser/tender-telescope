@@ -1,6 +1,12 @@
 @import '@fontsource/averia-serif-libre';
 @import '@fontsource-variable/bitter';
 
+p, li, table {
+    font-family: 'Averia Serif Libre', sans-serif;
+    font-weight: 200;
+    color: white;
+}
+
 h1, h2, h3, h4, h5, h6{
     width: 100%;
     text-align: center;
@@ -38,15 +44,9 @@ h5 {
     font-size: 1rem;
     font-weight: 200;
 }
-h6 {
+h6, th {
     font-size: 0.8rem;
     font-weight: 100;
-}
-
-p, li {
-    font-family: 'Averia Serif Libre', sans-serif;
-    font-weight: 200;
-    color: white;
 }
 
 code {
