@@ -1,5 +1,5 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter, title } = Astro.props;
 import Nav from "../components/NavBar.astro";
 import logo from "../images/logo.jpg";
 import "../styles/Coding.css"
@@ -15,7 +15,7 @@ import "../styles/Coding.css"
         />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title} - Thomas Lower</title>
+        <title>{frontmatter==null ? title : frontmatter.title} - Thomas Lower</title>
     </head>
     <body>
         <Nav />
